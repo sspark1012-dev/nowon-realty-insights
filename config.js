@@ -1,2 +1,1 @@
-// 공개 주소만 포함합니다. API키를 넣지 마세요.
-window.NOWON_API_BASE_URL = "https://nowon-parksangsoon-realty.amberbeacon3.chatgpt.site/";
+// 공개본은 data/의 공개 데이터 스냅샷을 사용합니다. API키는 포함하지 않습니다.
