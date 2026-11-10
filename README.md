@@ -1,0 +1,29 @@
+# 박상순부동산 · 노원 부동산 인사이트
+
+**공개 대시보드: https://sspark1012-dev.github.io/nowon-realty-insights/**
+
+원본: https://nowon-parksangsoon-realty.amberbeacon3.chatgpt.site/
+
+원본 Sites 대시보드의 로고·화면·실거래 조회·시장 그래프를 GitHub Pages로 옮긴 버전입니다.
+
+## 기능
+- 상계·중계·하계·공릉·월계동별 조회, 주간·월간·사용자 지정 기간
+- 매매·전세·월세 Top10, 선택 단지 지도와 최근 거래가격
+- 매매 거래량·평당가격 추이, 동별·단지별 가격 비교, 면적대별 거래 비중
+- 추천매물 샘플 4개 및 브라우저 저장 등록·삭제
+- 교통·학교·생활시설·개발계획을 펼쳐 보여 주는 입지 분석
+
+## 구성 및 배포
+- index.html: 실제 화면. 다른 사이트로 이동시키는 리디렉션이 아닙니다.
+- config.js: API 서버의 공개 주소
+- .github/workflows/pages.yml: main 브랜치 변경 시 GitHub Pages 배포
+- server/worker.js: 별도 서버에서 실행하는 API 소스 (GitHub Pages에서는 실행하지 않음)
+- server/.env.example: 서버 환경 변수 이름 예시. 실제 키는 없음.
+
+GitHub Pages는 프런트엔드를 제공하고, 실거래·지도 검색은 원본 Sites 서버의 읽기 전용 API로 조회합니다. API키는 Sites 서버 비밀값으로만 보관하며 이 저장소나 브라우저에 포함하지 않습니다.
+서버 ALLOWED_ORIGINS에는 https://sspark1012-dev.github.io를 등록합니다.
+
+추천매물은 현재 브라우저의 localStorage에 저장되어 다른 사용자와 공유되지 않습니다. 초기 추천매물은 설명용 샘플입니다.
+가격은 전용면적 기준 평당 실거래가의 단순 평균이며 공인 가격지수가 아닙니다. 지수·미분양 수치는 미연동이고, 일부 시설은 공개 데이터 상태에 따라 누락될 수 있습니다.
+
+운영: 박상순부동산 · 010-9495-8873
